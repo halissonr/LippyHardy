@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+#card{
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .5s;
+}
+.face{
+    padding: 25px;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 23px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+#front{
+    backface-visibility: hidden;
+    background-color: #DAA520;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    transform: rotateY(180deg);
+}
+#back{
+    background-color: #DAA520;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+}
+.flip{
+    transform: rotateY(180deg);
+}
+.divbotao{
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 360px;
+}
+.botao{
+    background: #FAFBFC;
+    border-color: #FAFBFC;
+    color: #24292E;
+    border-style: outset;
+    height: 35px;
+    width: 100px;
+    font: bold15px arial, sans-serif;
+    text-shadow: none;
+    text-decoration:none;
+    border: 2px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;          
+}
+.profile{
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.profile img{
+    width: 70%;
+}

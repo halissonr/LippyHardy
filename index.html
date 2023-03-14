@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Terapias Integradas - 2023</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <div>
+        <div style="font-family: 'Arial', sans-serif;">
+            <h1>CTI - 2023</h1>
+        </div>
+        <div class="flip" id="card">
+            <div class="face" id="front">
+                <p id="idface">
+                Lippy, o leão e Hardy, a hiena<br>
+                Oh, céus! Oh, vida! Oh, azar! Isso não vai dar certo!
+                </p>
+            </div>
+            <div class="face profile" id="back">
+                <img id="image" src="./assets/img/cti.png">
+            </div>
+        </div>
+        <div class="divbotao">
+            <button class="botao" onclick="newMessage()">Próxima</button>
+        </div>
+    </div>
+    <script>
+        var frasesLippy = [
+        '"A fisioterapia é uma profissão que transforma vidas e ajuda as pessoas a retomarem sua independência e qualidade de vida."',
+        '"O processo de reabilitação pode ser desafiador, mas cada pequena conquista é uma vitória a ser celebrada."',
+        '"A fisioterapia é uma jornada de autoconhecimento e superação de limites."',
+        '"O trabalho do fisioterapeuta é essencial para prevenir lesões e tratar dores e disfunções físicas."',
+        '"A fisioterapia não só trata o corpo, mas também a mente, ajudando a promover a autoestima e a confiança."',
+        '"A dedicação e o comprometimento com o tratamento são fundamentais para alcançar resultados satisfatórios na fisioterapia."',
+        '"A fisioterapia é uma arte, que exige habilidade, conhecimento e sensibilidade para tratar cada paciente de forma única."',
+        '"A fisioterapia é um caminho para a recuperação, a renovação e o fortalecimento do corpo e da mente."',
+        '"Comece onde você está, use o que você tem e faça o que você pode."<p>Arthur Ashe',
+        '"Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado."<p>Roberto Shinyashiki',
+        '"Devíamos ser ensinados a não esperar por inspiração para começar algo. Ação sempre gera inspiração. Inspiração raramente gera ação."<p>Frank Tibolt',
+        '"Não importa que você vá devagar, contanto que você não pare."<p>Confúcio',
+        '"A inspiração existe, porém temos que encontrá-la trabalhando."<p>Pablo Picasso',
+        '"Coragem é saber o que não temer."<p>Platão',
+        '"Conhecer a si mesmo é o começo de toda sabedoria."<p>Aristóteles',
+        '"Descubra quem é você, e seja essa pessoa. A sua alma foi colocada nesse mundo para ser isso, então viva essa verdade e todo resto virá."<p>Ellen Degeneres',
+        '"Acredite em milagres, mas não dependa deles."<p>Immanuel Kant',
+        '"Não é a carga que o derruba, mas a maneira como você a carrega."<p>Lou Holtz',
+        '"Não existe nada de completamente errado no mundo, mesmo um relógio parado, consegue estar certo duas vezes por dia."<p>Paulo Coelho',
+        '"A vida é 10% o que acontece a você e 90% como você reage a isso."<p>Charles Swindoll',
+        '"O otimismo é a fé daquele que conduz à realização; nada pode ser feito sem esperança."<p>Helen Keller',
+        '"A felicidade não é algo pronto. Ela é feita das suas próprias ações".<p>Dalai Lama',
+        '"Nossa maior fraqueza está em desistir. O caminho mais certo de vencer é tentar mais uma vez".<p>Thomas Edison',
+        '"Mude o modo que você olha para as coisas, e as coisas que você olha mudarão."<p>Wayne Dyer',
+        '"Um homem criativo é motivado pelo desejo de alcançar, não pelo desejo de vencer os outros."<p>Ayn Rand',
+        '"Viver é acalentar sonhos e esperanças, fazendo da fé a nossa inspiração maior. É buscar nas pequenas coisas, um grande motivo para ser feliz!"<p>Mario Quintana',
+        '"As conquistas dependem de 50% de inspiração, criatividade e sonhos, e 50% de disciplina, trabalho árduo e determinação. São duas pernas que devem caminhar juntas."<p>Augusto Cury',
+        '"Cada segundo é tempo para mudar tudo para sempre."<p>Charles Chaplin',
+        '"A paz vem de dentro de você mesmo. Não a procure à sua volta."<p>Buda',
+        '"Aprenda com o ontem. Viva o hoje. tenha esperança para o amanhã."<p>Albert Einstein',
+        '"Não há atalhos para nenhum destino onde se vale a pena chegar."<p>Beverly Sills',
+        '"Não se deixe intimidar pela opinião dos outros. Só a mediocridade é segura, por isso corra seus riscos e faça o que deseja."<p>Paulo Coelho',
+        '"A simplicidade é o último grau de sofisticação."<p>Leonardo da Vinci',
+        '"Um dia, quando olhares para trás, verás que os dias mais belos foram aqueles em que lutaste."<p>Sigmund Freud',
+        '"Só é lutador quem sabe lutar consigo mesmo."<p>Carlos Drummond de Andrade'
+        ]
+        var frasesHardy = [
+            '"A vida é um portifolio de fracassos."',
+            '"A vida te derruba hoje te preparando para a queda de amanhã"',
+            '"É errando que se aprende a errar."',
+            '"É só uma fase ruim, logo vai piorar"',
+            '"O não você já tem, agora corra atrás da humilhação"',
+            '"Foi só um dia ruim, amanhã será pior."',
+            '"Não sabendo que era impossível, foi lá e soube"',
+            '"Não espere ninguém estragar seu dia, vá lá e estrague você mesmo"',
+            '"Não desista amanha, se você pode desistir hoje."',
+            '"Nada é tão horrível que não possa piorar"',
+            '"Nunca é tarde para desistir"',
+            '"Nenhum obstáculo é grande para quem desiste"',
+            '"Trabalhe com o que você ame e nunca mais amará nada"',
+            '"Nunca esqueça de odiar todos igualmente para não correr o risco de ser preconceituoso."',
+            '"Todo cadaver no everest já foi uma pessoa extremamente motivada."',
+            '"Se você deseja ser uma pessoa legal, não esqueça de tomar seu Rivotril"',
+            '"Pode não dar certo, e você vai ter certeza quando tentar"',
+            '"Primeiro eles riem dos seus sonhos.<br>...<br>depois eles riem dos seus fracassos."'
+        ]
+        function newMessage() {
+            var escolha = Math.random()
+            var frases = frasesLippy
+            var imagem = './assets/img/Lippy.png'
+            if (escolha > 0.7) {
+                frases = frasesHardy
+                imagem = './assets/img/Hardy.png'
+            }
+            var num = Math.floor(Math.random()*frases.length)
+            var item = frases[num];
+            // Altera texto
+            document.getElementById("idface").innerHTML = item;
+            
+            // Altera imagem
+            var img = document.querySelector("#image");
+            img.setAttribute('src', imagem);
+        }
+        
+        const card = document.querySelector("#card")
+        card.addEventListener("click", (e)=>{
+            card.classList.toggle("flip")
+        })
+    </script>
+</body>
+</html>
+
+
