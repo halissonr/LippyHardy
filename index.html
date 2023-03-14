@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Terapias Integradas - 2023</title>
+    <title>Motivação - 2023</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
     <div>
         <div style="font-family: 'Arial', sans-serif;">
-            <h1>CTI - 2023</h1>
+            <h1>Motivação - 2023</h1>
         </div>
         <div class="flip" id="card">
             <div class="face" id="front">
                 <p id="idface">
-                Lippy, o leão e Hardy, a hiena<br>
-                Oh, céus! Oh, vida! Oh, azar! Isso não vai dar certo!
+                A vida sob o ponto de vista de:<br>
+                Lippy e Hardy<br>
+                Oh, vida!<br>Oh, céus!<br>Oh, azar!<br>Isso não vai dar certo!
                 </p>
             </div>
             <div class="face profile" id="back">
@@ -25,7 +26,7 @@
             </div>
         </div>
         <div class="divbotao">
-            <button class="botao" onclick="newMessage()">Próxima</button>
+            <button id="btProx" class="botao" onclick="newMessage()">Próxima</button>
         </div>
     </div>
     <script>
@@ -84,9 +85,12 @@
             '"Todo cadaver no everest já foi uma pessoa extremamente motivada."',
             '"Se você deseja ser uma pessoa legal, não esqueça de tomar seu Rivotril"',
             '"Pode não dar certo, e você vai ter certeza quando tentar"',
-            '"Primeiro eles riem dos seus sonhos.<br>...<br>depois eles riem dos seus fracassos."'
+            '"Primeiro eles riem dos seus sonhos.<br>...<br>depois eles riem dos seus fracassos."',
+            '"Não faça hoje aquilo que você pode deixar pra amanha."'
         ]
+
         function newMessage() {
+            document.getElementById("btProx").disabled = true;
             var escolha = Math.random()
             var frases = frasesLippy
             var imagem = './assets/img/Lippy.png'
@@ -94,14 +98,26 @@
                 frases = frasesHardy
                 imagem = './assets/img/Hardy.png'
             }
-            var num = Math.floor(Math.random()*frases.length)
-            var item = frases[num];
-            // Altera texto
-            document.getElementById("idface").innerHTML = item;
-            
-            // Altera imagem
-            var img = document.querySelector("#image");
-            img.setAttribute('src', imagem);
+
+           function conta(num) {
+                document.getElementById("idface").innerHTML = "<h1>"+num+"</h1>";
+            }
+
+            function termina() {
+                var num = Math.floor(Math.random()*frases.length)
+                var item = frases[num];
+                // Altera texto
+                document.getElementById("idface").innerHTML = item;
+                // Altera imagem
+                var img = document.querySelector("#image");
+                img.setAttribute('src', imagem);
+                document.getElementById("btProx").disabled = false;
+            }
+
+            setTimeout(conta, 1, '3');
+            setTimeout(conta, 1001, '2');
+            setTimeout(conta, 2002, '1');
+            setTimeout(termina, 3003);
         }
         
         const card = document.querySelector("#card")
