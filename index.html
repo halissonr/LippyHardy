@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motivação - 2023</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
     <div>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="divbotao">
-            <button id="btProx" class="botao" onclick="newMessage()">Próxima</button>
+            <button id="btProx" class="botao" onclick="newMessage()"><h1>FRASE</h1></button>
         </div>
     </div>
     <script>
@@ -74,19 +74,19 @@
             '"É só uma fase ruim, logo vai piorar"',
             '"O não você já tem, agora corra atrás da humilhação"',
             '"Foi só um dia ruim, amanhã será pior."',
-            '"Não sabendo que era impossível, foi lá e soube"',
-            '"Não espere ninguém estragar seu dia, vá lá e estrague você mesmo"',
             '"Não desista amanha, se você pode desistir hoje."',
+            '"Não espere ninguém estragar seu dia, vá lá e estrague você mesmo"',
+            '"Não faça hoje aquilo que você pode deixar pra amanha."',
+            '"Não sabendo que era impossível, foi lá e soube"',
             '"Nada é tão horrível que não possa piorar"',
             '"Nunca é tarde para desistir"',
-            '"Nenhum obstáculo é grande para quem desiste"',
-            '"Trabalhe com o que você ame e nunca mais amará nada"',
             '"Nunca esqueça de odiar todos igualmente para não correr o risco de ser preconceituoso."',
-            '"Todo cadaver no everest já foi uma pessoa extremamente motivada."',
+            '"Nenhum obstáculo é grande para quem desiste"',
             '"Se você deseja ser uma pessoa legal, não esqueça de tomar seu Rivotril"',
             '"Pode não dar certo, e você vai ter certeza quando tentar"',
             '"Primeiro eles riem dos seus sonhos.<br>...<br>depois eles riem dos seus fracassos."',
-            '"Não faça hoje aquilo que você pode deixar pra amanha."'
+            '"Trabalhe com o que você ame e nunca mais amará nada"',
+            '"Todo cadaver no everest já foi uma pessoa extremamente motivada."',
         ]
 
         function newMessage() {
@@ -94,7 +94,7 @@
             var escolha = Math.random()
             var frases = frasesLippy
             var imagem = './assets/img/Lippy.png'
-            if (escolha > 0.7) {
+            if (escolha > 0.7) { // 30% de chance de ser frase pessimista
                 frases = frasesHardy
                 imagem = './assets/img/Hardy.png'
             }
